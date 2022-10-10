@@ -62,8 +62,7 @@ public class Basics {
          * TODO (Task 2): Create a variable named my_variable and assign it the
          *                value 100.
          */
-
-
+        int my_variable = 100;
 
         /* Do not remove the line below: if you did task 2 correctly, then
          * you should see the message "my_variable's value is 100" if you run
@@ -99,7 +98,9 @@ public class Basics {
          * Current count: 1
          * Current count: 0
          */
-
+        for (int i = 10; i >= 0; i--){
+            System.out.println("Current count: " + i);
+        }
 
     }
 
@@ -142,6 +143,11 @@ public class Basics {
          */
         StringBuilder ret = new StringBuilder();
 
+        String[] arrOfStr = to_split.split(" ");
+
+        for (String a : arrOfStr){
+            ret.append(a.charAt(0));
+        }
         // Fill in the rest of the body here
 
         return ret.toString();
@@ -170,6 +176,20 @@ public class Basics {
          *                You can index into arrays as we do in Python
          *                (e.g. arr[i] gives you the item at index i).
          */
+        if(arr.length <= 1){
+            return(0);
+        }
+
+        int even = 0;
+        for(int a : arr){
+            if(even == 0){
+                even = 1;
+            }
+            else{
+                even = 0;
+                current_sum += a;
+            }
+        }
 
         return current_sum;
     }
